@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    <meta charset="UTF-8"/>
 </head>
-<body>我爱你晨璐<br></br>
+<body>
+<p style="background-color:white;color:red;ont-size:30px;font-famliy:arial;test-align:center">我爱你晨璐</p>
 
-<p href='https://www.cnblogs.com/rain144576/p/6884196.html'>数据库JDBC接口
-
+<p style="test-align:left">
+<a href='https://www.cnblogs.com/rain144576/p/6884196.html'>数据库JDBC接口概述</a><br></br>
+<table border="1">
+<tr>
+    <th>操作方式</th>
+    <th>实现方法</th>
+	<th>注意事项</th>
+</tr>
+<tr>
+    <th>普通操作</th>
+    <th>Class.forName("com.mysql.jdbc.Driver")<br></br>DriverManager.getConnection(url, user, password).prepareStatement(sql).executeUpdate();</th>
+	<th>注意事项</th>
+</tr>
+<tr>
+    <th>批量操作</th>
+    <th>Class.forName("com.mysql.jdbc.Driver")
+	<br></br>DriverManager.getConnection(url, user, password).prepareStatement(sql).addBatch();
+	<BR></BR>.executeBatch();</th>
+	<th>JDBC连接的url中rewriteBatchedStatements参数设为true</th>
+</tr>
+<tr>
+    <th>事务操作</th>
+    <th>Class.forName("com.mysql.jdbc.Driver")
+	    <br></br>取消自动提交DriverManager.getConnection(url, user, password).setAutoCommit(false);
+		<br></br>最后在所有命令执行完之后再提交事务conn.commit();</th>
+	<th></th>
+</tr>
+<tr>
+    <th>事务+批量操作</th>
+    <th>同时使用两种方法</th>
+	<th></th>
+</tr>
+<tr>
+    <th>加入预编译操作</th>
+    <th>JDBC的连接url中useServerPrepStmts=true</th>
+	<th><a href="https://www.cnblogs.com/fnz0/p/5713102.html">参考文档</a></th>
+</tr>
+</table>
 </p>
 
 
